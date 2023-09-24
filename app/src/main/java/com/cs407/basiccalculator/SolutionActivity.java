@@ -12,10 +12,14 @@ public class SolutionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solution);
-        textView=(TextView) findViewById(R.id.textView);
+        TextView resultTextView = findViewById(R.id.textView);
+
         Intent intent=getIntent();
-        String str = intent.getStringExtra("message");
-        textView.setText("" + str);
+        float result = intent.getFloatExtra("result",0);
+        String formattedResult = String.format("%.2f", result);
+        resultTextView.setText("" + formattedResult);
+
+
 
     }
 }
